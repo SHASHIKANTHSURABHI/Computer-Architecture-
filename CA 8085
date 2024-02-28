@@ -1,0 +1,92 @@
+[2/22, 9:49 PM] Sai Deepak: MVI C,00
+LDA 100
+MOV B,A
+LDA 101
+ADD B
+JNC skip
+INR C ; c=C+1
+skip: STA 102
+MOV A,C
+STA 103
+HLT
+[2/22, 9:49 PM] Sai Deepak: MVI C,00
+LDA 100
+MOV B,A
+LDA 101
+SUB B
+JNC skip
+INR C 
+skip: STA 102
+MOV A,C
+STA 103
+HLT
+[2/22, 9:49 PM] Sai Deepak: LXI H,100
+MOV B,M 
+MVI A,00 
+MOV C,A 
+INX H 
+CONT: ADD M 
+JNC SKIP 
+INR C
+SKIP: DCR B
+JNZ CONT 
+STA 102
+MOV A,C
+STA 103
+HLT
+[2/22, 9:49 PM] Sai Deepak: MVI C,00
+LDA 100
+MOV B,A
+LDA 101
+ADD B
+JNC skip
+INR C ; c=C+1
+skip: STA 102
+MOV A,C
+STA 103
+HLT
+[2/22, 9:49 PM] Sai Deepak: MVI C,00
+LDA 100
+MOV B,A
+LDA 101
+SUB B
+JNC skip
+INR C 
+skip: STA 102
+MOV A,C
+STA 103
+HLT
+[2/22, 9:49 PM] Sai Deepak: LXI H,100
+MOV B,M 
+MVI A,00 
+MOV C,A 
+INX H 
+CONT: ADD M 
+JNC SKIP 
+INR C
+SKIP: DCR B
+JNZ CONT 
+STA 102
+MOV A,C
+STA 103
+HLT
+[2/22, 9:49 PM] Sai Deepak: MVI A, 66   
+MVI B, 34   
+CMP B
+JC LABEL_A
+JMP LABEL_B
+LABEL_A: STA 200
+JMP END
+LABEL_B: MOV A,B
+STA 200
+END: HLT
+                                                                                                                                                                                                                        MVI A, 66   
+MVI B, 34   
+CMP B
+JC LABEL_B
+JMP LABEL_A
+LABEL_A: STA 200
+JMP END
+LABEL_: MOV A,B
+STA 200
+END: HLT
